@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input id="roomId" /><button>ルームに入る</button>
+  </body>
+  <script>
+    const button = document.querySelector("button");
+    button.addEventListener("click", () => {
+      const input = document.getElementById("roomId");
+      if (!input.value) {
+        alert("ルームIDを入力してください");
+        return;
+      }
+      localStorage.setItem("roomId", input.value);
+      window.location.href = "/chat";
+    });
+  </script>
+</html>
